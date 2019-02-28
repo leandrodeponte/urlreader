@@ -1,0 +1,76 @@
+{
+	"id": "bc1e591e-aeaa-5c93-4da8-00897fc186a3",
+	"name": "IBM",
+	"description": "",
+	"order": [
+		"621b3424-7764-c1d6-250e-2ce5914be866",
+		"884cd48c-478a-1190-3311-a093e65d2531"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1551326314130,
+	"owner": "733225",
+	"public": false,
+	"requests": [
+		{
+			"id": "621b3424-7764-c1d6-250e-2ce5914be866",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://127.0.0.1:8080/api/url",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1551326436302,
+			"name": "Get All URLs",
+			"description": "",
+			"collectionId": "bc1e591e-aeaa-5c93-4da8-00897fc186a3",
+			"responses": [],
+			"rawModeData": ""
+		},
+		{
+			"id": "884cd48c-478a-1190-3311-a093e65d2531",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://127.0.0.1:8080/api/url/process",
+			"folder": null,
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1551363528563,
+			"name": "Process URL",
+			"description": "",
+			"collectionId": "bc1e591e-aeaa-5c93-4da8-00897fc186a3",
+			"responses": [],
+			"rawModeData": "http://www.google.com"
+		}
+	]
+}
