@@ -44,12 +44,6 @@
 		</dependency>
 
 		<dependency>
-			<groupId>io.springfox</groupId>
-			<artifactId>springfox-swagger2</artifactId>
-			<version>2.9.2</version>
-		</dependency>
-
-		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 		</dependency>
@@ -85,6 +79,22 @@
 					<jvmArguments>
 						 <!---Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005-->
 					</jvmArguments>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.cloudfoundry</groupId>
+				<artifactId>cf-maven-plugin</artifactId>
+				<version>1.1.2</version>
+				<configuration>
+					<target>https://api.ng.bluemix.net</target>
+					<org>leandrodeponte@gmail.com</org>        	<!-- update -->
+					<space>dev</space>                          <!-- update -->
+					<appname>urlreader</appname>              	<!-- update -->
+					<url>urlreader.mybluemix.net</url>  		<!-- update -->
+					<memory>512</memory>
+					<instances>1</instances>
+					<username>leandrodeponte@gmail.com</username> <!-- update, insecure -->
+					<password>@Admin!2#</password>     <!-- update, insecure -->
 				</configuration>
 			</plugin>
 		</plugins>

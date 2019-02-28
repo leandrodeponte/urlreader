@@ -40,4 +40,4 @@ https://github.com/leandrodeponte/urlreader.git
     
 * Docker
     docker build -t urlreader .
-    docker run -rm urlreader
+    docker run urlreader
