@@ -52,7 +52,6 @@ public class UrlService {
             URLConnection connection = new URL(url).openConnection();
 
             connection.setConnectTimeout(1000);
-            //String out = new Scanner(new URL(url).openStream(), "UTF-8").useDelimiter("\\A").next();
             String out = UrlUtil.readFromUrl(url);
 
             urlList = UrlUtil.identificarURL(out);

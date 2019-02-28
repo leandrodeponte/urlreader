@@ -22,8 +22,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standaloneSetup;
 
 
-//@RunWith(SpringRunner.class)
-//@SpringBootTest
+@RunWith(SpringRunner.class)
+@SpringBootTest
 public class UrlControllerTest {
 
     MockMvc mockMvc;
@@ -36,7 +36,7 @@ public class UrlControllerTest {
 
     private List<Url> urlList = new ArrayList<Url>();
 
-    //@Before
+    @Before
     public void setup() throws Exception {
 
         this.mockMvc = standaloneSetup(this.messageController).build();// Standalone context
@@ -47,7 +47,7 @@ public class UrlControllerTest {
 
     }
 
-    //@Test
+    @Test
     public void getMessage_TestOK() throws Exception {
 
         when(urlService.getAllUrls()).thenReturn(urlList);

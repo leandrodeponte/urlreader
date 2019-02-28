@@ -5,6 +5,7 @@ import com.ibm.urlreader.service.UrlService;
 import org.springframework.stereotype.Component;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
@@ -30,7 +31,6 @@ public class UrlUtil {
 
 
         List<Url> urlList = new ArrayList<>();
-        //TODO buscar a lista das URLs dentro das URLs - Recursivo
         Matcher matcher = urlPattern.matcher(pageText);
         while (matcher.find()) {
             int matchStart = matcher.start(1);
@@ -46,15 +46,13 @@ public class UrlUtil {
     public static String readFromUrl(String urlAdd){
 
         URL url;
-        InputStream is = null;
         BufferedReader br;
         String line;
         StringBuilder sb;
 
         try{
-            url = new URL(urlAdd);
-            is = url.openStream();
-            br = new BufferedReader(new InputStreamReader(is));
+
+            br = UrlUtil.openUrl(urlAdd);
             sb = new StringBuilder();
 
             while ((line = br.readLine()) != null){
@@ -65,17 +63,18 @@ public class UrlUtil {
 
         }catch(Exception e){
             e.printStackTrace();
-        }finally{
-            try{
-                if(is != null){
-                    is.close();
-                }
-            }catch(Exception ex){
-                ex.printStackTrace();
-            }
         }
 
         return null;
+
+    }
+
+    public static BufferedReader openUrl(String urlAdd) throws IOException {
+
+        URL url = new URL(urlAdd);
+        InputStream is = url.openStream();
+        BufferedReader br = new BufferedReader(new InputStreamReader(is));
+        return br;
 
     }
 }
