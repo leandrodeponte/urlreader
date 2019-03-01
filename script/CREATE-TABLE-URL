@@ -1,0 +1,5 @@
+CREATE TABLE `url` (
+  `id` bigint(20) NOT NULL,
+  `text` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
