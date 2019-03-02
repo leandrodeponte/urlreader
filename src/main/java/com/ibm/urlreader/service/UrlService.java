@@ -16,6 +16,7 @@ import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.UUID;
 
 @Service
 public class UrlService {
@@ -131,13 +132,16 @@ public class UrlService {
     }
 
     private Url persistUrl(Url url){
+        url.setId(UUID.randomUUID());
         return urlRepository.save(url);
     }
 
     private void persistUrls(List<Url> urlList){
         for(Url url : urlList){
+            url.setId(UUID.randomUUID());
             urlRepository.save(url);
         }
     }
+
 
 }

@@ -1,18 +1,17 @@
 package com.ibm.urlreader.model;
 
-import jdk.nashorn.internal.objects.annotations.Constructor;
 import lombok.*;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import java.util.UUID;
+
 
 @EqualsAndHashCode
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
+@Document(collection = "url")
 public class Url {
 
     public Url(String text){
@@ -21,10 +20,8 @@ public class Url {
 
     @Getter @Setter
     @Id
-    @GeneratedValue
-    private Long id;
+    private UUID id;
 
     @Getter @Setter
-    @Column(columnDefinition="varchar(1000)")
     private String text;
 }
