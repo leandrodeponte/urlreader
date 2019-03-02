@@ -21,18 +21,18 @@ public class UrlUtilTest {
     private final static String URL_FTP = "<html> <a ftp://www.ibm.com> Link IBM </a>  </html>";
 
     @Test
-    public void identificaUrl_TestOK() throws Exception {
+    public void identifyUrl_TestOK() throws Exception {
 
-        List<Url> urlList = UrlUtil.identificarURL(URL_HTTP);
+        List<Url> urlList = UrlUtil.identifyURL(URL_HTTP);
         Assert.assertEquals(urlList.size(),1);
         Assert.assertEquals(urlList.get(0).getText(), "http://www.ibm.com");
 
     }
 
     @Test
-    public void identificarUrl_2Links_TestOK() throws Exception {
+    public void identifiyUrl_2Links_TestOK() throws Exception {
 
-        List<Url> urlList = UrlUtil.identificarURL(URL_HTTP_2LINKS);
+        List<Url> urlList = UrlUtil.identifyURL(URL_HTTP_2LINKS);
         Assert.assertEquals(urlList.size(),2);
         Assert.assertEquals(urlList.get(0).getText(), "http://www.ibm.com");
         Assert.assertEquals(urlList.get(1).getText(), "http://www.github.com");
@@ -40,9 +40,9 @@ public class UrlUtilTest {
     }
 
     @Test
-    public void identificarUrl_https_TestOK() throws Exception {
+    public void identifiyUrl_https_TestOK() throws Exception {
 
-        List<Url> urlList = UrlUtil.identificarURL(URL_HTTPS);
+        List<Url> urlList = UrlUtil.identifyURL(URL_HTTPS);
         Assert.assertEquals(urlList.size(),1);
         Assert.assertEquals(urlList.get(0).getText(), "https://www.ibm.com");
 
@@ -50,11 +50,10 @@ public class UrlUtilTest {
 
 
     @Test
-    public void identificarUrl_ftp_TestOK() throws Exception {
+    public void identifiyUrl_ftp_TestNOK() throws Exception {
 
-        List<Url> urlList = UrlUtil.identificarURL(URL_FTP);
-        Assert.assertEquals(urlList.size(),1);
-        Assert.assertEquals(urlList.get(0).getText(), "ftp://www.ibm.com");
+        List<Url> urlList = UrlUtil.identifyURL(URL_FTP);
+        Assert.assertEquals(urlList.size(),0);
 
     }
 

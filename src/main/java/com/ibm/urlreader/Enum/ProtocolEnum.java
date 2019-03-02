@@ -1,18 +1,17 @@
 package com.ibm.urlreader.Enum;
 
-import lombok.Getter;
-
 public enum ProtocolEnum {
 
-    HTTP("http://"),
-    HTTPS("https://");
+    HTTP("HTTP"),
+    HTTPS("HTTPS");
 
-    @Getter
-    private  String protocol;
+    private String protocol;
 
-    ProtocolEnum(String s) {
-        this.protocol = s;
+    ProtocolEnum(String protocol) {
+        this.protocol = protocol;
     }
 
-
+    public String getProtocol(){
+        return protocol;
+    }
 }

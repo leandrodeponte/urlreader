@@ -8,6 +8,7 @@ import java.util.List;
 public interface UrlRepository extends JpaRepository<Url, Long>{
 
         Url findOneById(Long id);
+        List<Url> findByText(String text);
         List<Url> findAll();
         Url save(Url url);
 
